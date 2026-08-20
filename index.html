@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Syed Khaja — Cybersecurity Consultant and Security Engineer. Custom security solutions, SOC engineering, endpoint security, automation and AI-powered cybersecurity.">
+<meta name="theme-color" content="#05080d">
+<title>Syed Khaja | Cybersecurity Consultant & Security Engineer</title>
+
+<style>
+:root{
+  --bg:#05080d;--bg2:#09101a;--panel:rgba(13,20,31,.78);--text:#f2f7ff;
+  --muted:#96a7bb;--line:rgba(255,255,255,.09);--cyan:#62e9ff;
+  --violet:#8d7cff;--green:#61f3a5;--max:1180px;--radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+  radial-gradient(circle at 15% 5%,rgba(98,233,255,.09),transparent 27%),
+  radial-gradient(circle at 88% 25%,rgba(141,124,255,.10),transparent 30%),
+  linear-gradient(180deg,#05080d,#070b12 55%,#05080d);
+  color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.65;overflow-x:hidden;
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.20;
+ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+ background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+a{text-decoration:none;color:inherit}.container{width:min(calc(100% - 38px),var(--max));margin:auto}
+.accent{color:var(--cyan)}.muted{color:var(--muted)}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:999;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 18px rgba(98,233,255,.7)}
+#particles{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.48}
+.ambient{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-2;opacity:.12;animation:orb 14s ease-in-out infinite alternate}
+.orb1{width:300px;height:300px;background:var(--cyan);left:-130px;top:20vh}.orb2{width:330px;height:330px;background:var(--violet);right:-150px;top:60vh;animation-delay:-6s}
+.cursor-glow{position:fixed;width:230px;height:230px;border-radius:50%;pointer-events:none;z-index:0;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(98,233,255,.07),transparent 68%);opacity:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,8,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.03em}
+.mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#061017;font-weight:950;box-shadow:0 0 28px rgba(98,233,255,.18)}
+.links{display:flex;align-items:center;gap:25px}.links a{font-size:13px;color:#adbbce;transition:.2s}.links a:hover{color:#fff}
+.nav-cta{border:1px solid rgba(98,233,255,.3);padding:8px 13px;border-radius:999px;color:var(--cyan)!important;background:rgba(98,233,255,.05)}
+.hero{padding:150px 0 90px}.hero-grid{display:grid;grid-template-columns:1.16fr .84fr;gap:58px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:rgba(255,255,255,.03);font-size:11px;color:#b9c8d9;text-transform:uppercase;letter-spacing:.13em;margin-bottom:22px;animation:pulse 3s ease-in-out infinite}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 13px var(--green)}
+h1{font-size:clamp(48px,7vw,82px);line-height:.97;letter-spacing:-.065em;margin-bottom:25px}
+h1 span{background:linear-gradient(100deg,#fff 20%,var(--cyan) 58%,#a499ff 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:#b8c6d8;max-width:720px;line-height:1.8}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:12px;border:1px solid var(--line);font-size:13px;font-weight:800;transition:.2s;position:relative;overflow:hidden}
+.primary{color:#061017;background:linear-gradient(135deg,var(--cyan),#b0f5ff);border-color:transparent;box-shadow:0 12px 35px rgba(98,233,255,.14)}.secondary{background:rgba(255,255,255,.035)}
+.btn:hover{transform:translateY(-2px)}.btn:after{content:"";position:absolute;inset:-2px;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.24),transparent 65%);transform:translateX(-130%);transition:.55s}.btn:hover:after{transform:translateX(130%)}
+.terminal{border:1px solid var(--line);border-radius:25px;padding:22px;background:linear-gradient(145deg,rgba(18,27,42,.9),rgba(8,13,21,.82));box-shadow:0 25px 80px rgba(0,0,0,.35);transform-style:preserve-3d;transition:transform .18s}
+.terminal-top{display:flex;gap:7px;margin-bottom:19px}.terminal-top i{width:9px;height:9px;border-radius:50%;background:#526176}.terminal-title{margin-left:auto;color:#73839a;font:11px ui-monospace,monospace}
+pre{white-space:pre-wrap;color:#c9d5e6;font:13px/1.9 ui-monospace,SFMono-Regular,Consolas,monospace}.k{color:#65e9ff}.v{color:#c3a9ff}.g{color:#66f1a5}.m{color:#73849a}
+section{padding:88px 0}.head{max-width:760px;margin-bottom:34px}.label{font:700 11px ui-monospace,monospace;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;margin-bottom:11px}
+h2{font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.045em;margin-bottom:13px}.head p{color:var(--muted);font-size:15px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);padding:25px;background:linear-gradient(145deg,rgba(15,23,35,.86),rgba(8,13,21,.78));transition:.28s;box-shadow:0 15px 55px rgba(0,0,0,.16)}
+.card:hover{transform:translateY(-5px);border-color:rgba(98,233,255,.23)}.card:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.035),transparent 70%);transform:translateX(-120%);transition:.8s}.card:hover:before{transform:translateX(120%)}
+.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;color:var(--cyan);background:rgba(98,233,255,.07);border:1px solid rgba(98,233,255,.12);margin-bottom:17px;font-size:16px}
+h3{font-size:19px;letter-spacing:-.025em;margin-bottom:8px}.card p{font-size:14px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.tag{font:11px ui-monospace,monospace;color:#adbed1;border:1px solid var(--line);background:rgba(255,255,255,.025);padding:5px 8px;border-radius:999px}
+.project{display:grid;grid-template-columns:1fr 1fr;padding:0}.project-copy{padding:34px}.project-visual{min-height:370px;padding:30px;background:radial-gradient(circle at 50% 30%,rgba(98,233,255,.13),transparent 37%),#070c14;border-left:1px solid var(--line);display:grid;place-items:center}
+.flow{width:100%;max-width:390px}.node{padding:11px 14px;border:1px solid rgba(98,233,255,.18);background:rgba(98,233,255,.035);border-radius:10px;text-align:center;font:700 11px ui-monospace,monospace;transition:.25s}.node:hover{transform:translateX(6px);border-color:rgba(98,233,255,.4);box-shadow:0 0 25px rgba(98,233,255,.08)}.arrow{text-align:center;color:#547b91;padding:4px;animation:down 1.8s ease-in-out infinite}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.proof-card{border:1px solid var(--line);border-radius:17px;padding:18px;background:rgba(255,255,255,.025)}.proof-card strong{display:block;font-size:22px}.proof-card span{font-size:11px;color:var(--muted)}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{border:1px solid var(--line);border-radius:16px;padding:17px 12px;background:rgba(255,255,255,.025);text-align:center}.step b{display:block;color:var(--cyan);font:700 11px ui-monospace,monospace;margin-bottom:5px}.step span{font-size:12px;color:#c1cede}
+.techs{display:flex;flex-wrap:wrap;gap:9px}.tech{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:rgba(255,255,255,.025);color:#bdc9d9;font:12px ui-monospace,monospace}
+.cert{display:flex;align-items:center;gap:18px}.cert-badge{width:62px;height:62px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(98,233,255,.13),rgba(141,124,255,.12));border:1px solid rgba(98,233,255,.18);font-weight:950;color:var(--cyan)}
+.cta{text-align:center;border:1px solid rgba(98,233,255,.16);border-radius:28px;padding:72px 25px;background:radial-gradient(circle at 50% 0,rgba(98,233,255,.1),transparent 48%),rgba(13,20,31,.7);position:relative;overflow:hidden}.cta p{max-width:720px;margin:auto;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:35px 0 50px;color:#718096;font-size:12px}.footer{display:flex;justify-content:space-between;gap:18px;align-items:center}.footer-links{display:flex;gap:17px}.footer-links a:hover{color:#fff}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+.caret{display:inline-block;width:7px;height:1em;background:var(--cyan);vertical-align:-.12em;margin-left:3px;animation:blink .8s step-end infinite}
+@keyframes orb{to{transform:translate(35px,-45px) scale(1.12)}}@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(98,233,255,0)}}@keyframes down{50%{transform:translateY(3px);opacity:.45}}@keyframes blink{50%{opacity:0}}
+@media(max-width:900px){.hero-grid,.project,.grid2{grid-template-columns:1fr}.project-visual{border-left:0;border-top:1px solid var(--line)}.grid3{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.links{display:none}}
+@media(max-width:600px){.container{width:min(calc(100% - 26px),var(--max))}.hero{padding-top:120px}section{padding:70px 0}.grid3{grid-template-columns:1fr}.process{grid-template-columns:1fr}.proof{grid-template-columns:1fr}.hero h1{font-size:47px}.lead{font-size:16px}.footer{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}#particles,.cursor-glow{display:none}}
+</style>
+</head>
+
+<body>
+<div class="scroll-progress" id="progress"></div>
+<div class="ambient orb1"></div><div class="ambient orb2"></div>
+<canvas id="particles"></canvas><div class="cursor-glow" id="glow"></div>
+
+<nav>
+  <div class="container nav">
+    <a class="brand" href="#top"><span class="mark">SK</span><span>Syed Khaja</span></a>
+    <div class="links">
+      <a href="#solutions">Solutions</a>
+      <a href="#projects">Projects</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="https://www.linkedin.com/in/syed-khaja-s-a-2a571213a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="nav-cta" href="#contact">Discuss a Requirement</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> Cybersecurity Engineering & Research</div>
+      <h1>Building <span>security solutions</span> for real-world requirements.</h1>
+      <p class="lead">
+        I’m <strong>Syed Khaja</strong> — a Cybersecurity Consultant, Security Engineer,
+        Security Researcher, and AI Security Engineer focused on turning security requirements
+        into <span class="accent" id="typed">practical security systems</span><span class="caret"></span>.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Discuss a Security Requirement</a>
+        <a class="btn secondary" href="#projects">View My Work ↓</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/syed-khaja-s-a-2a571213a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="terminal reveal" id="terminal">
+      <div class="terminal-top"><i></i><i></i><i></i><span class="terminal-title">security_engineering.profile</span></div>
+<pre><span class="m">$</span> whoami
+
+<span class="k">name</span>    = <span class="v">"Syed Khaja"</span>
+<span class="k">role</span>    = <span class="v">"Cybersecurity Consultant"</span>
+
+<span class="k">focus</span>   = <span class="g">Security Engineering</span>
+<span class="k">focus</span>   = <span class="g">SOC & Endpoint Security</span>
+<span class="k">focus</span>   = <span class="g">Security Automation</span>
+<span class="k">focus</span>   = <span class="g">AI + Cybersecurity</span>
+
+<span class="m">$</span> objective
+<span class="g">→ turn security requirements into
+   practical security capabilities</span></pre>
+    </div>
+  </div>
+</section>
+
+<section id="solutions">
+<div class="container">
+  <div class="head reveal">
+    <div class="label">01 / What I Build</div>
+    <h2>Security solutions built around the problem — not the tool.</h2>
+    <p>Custom security engineering across monitoring, endpoint visibility, SOC operations, automation, software and AI.</p>
+  </div>
+
+  <div class="grid3">
+    <article class="card reveal"><div class="icon">⌁</div><h3>Security Monitoring & SOC</h3><p>Monitoring platforms, security events, detections, alerting, risk context and investigation workflows.</p><div class="tags"><span class="tag">SOC</span><span class="tag">Detection</span><span class="tag">SIEM</span></div></article>
+    <article class="card reveal"><div class="icon">▣</div><h3>Endpoint Security</h3><p>Endpoint telemetry, process visibility, Windows security events, network visibility and centralized monitoring.</p><div class="tags"><span class="tag">Windows</span><span class="tag">Telemetry</span><span class="tag">EDR Concepts</span></div></article>
+    <article class="card reveal"><div class="icon">◈</div><h3>Network Security</h3><p>Network monitoring, traffic analysis, IDS/IPS environments, firewall architecture and controlled security testing.</p><div class="tags"><span class="tag">TCP/IP</span><span class="tag">IDS/IPS</span><span class="tag">Firewalls</span></div></article>
+    <article class="card reveal"><div class="icon">⚙</div><h3>Security Automation</h3><p>Automation for collection, analysis, alert processing, reporting, integrations and repetitive security operations.</p><div class="tags"><span class="tag">Python</span><span class="tag">REST API</span><span class="tag">Automation</span></div></article>
+    <article class="card reveal"><div class="icon">AI</div><h3>AI-Powered Security</h3><p>AI-assisted analysis, alert triage, threat intelligence enrichment, investigation support and private/local AI workflows.</p><div class="tags"><span class="tag">LLMs</span><span class="tag">Ollama</span><span class="tag">Local AI</span></div></article>
+    <article class="card reveal"><div class="icon">⌘</div><h3>Custom Security Software</h3><p>Purpose-built security applications, dashboards, APIs, internal tools, investigation utilities and integrations.</p><div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React</span></div></article>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+  <div class="head reveal">
+    <div class="label">02 / Featured Work</div>
+    <h2>Proof of what I build.</h2>
+    <p>One of my flagship engineering projects connects endpoint visibility with practical SOC operations.</p>
+  </div>
+
+  <div class="card project reveal">
+    <div class="project-copy">
+      <div class="label">SOC-enterprise</div>
+      <h3 style="font-size:30px">Enterprise Endpoint Monitoring & Security Operations Platform</h3>
+      <p style="margin-top:14px">An endpoint-centric security operations platform that transforms endpoint telemetry and Windows security events into detections, risk signals, alerts, investigations and incident-response workflows.</p>
+      <div class="tags" style="margin-top:21px">
+        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Windows Agent</span><span class="tag">Detection</span><span class="tag">IOC Correlation</span><span class="tag">Risk</span><span class="tag">Incident Response</span><span class="tag">RBAC</span>
+      </div>
+      <div class="actions"><a class="btn primary" href="https://github.com/sdkhaja92/enterprise-pc-monitoring" target="_blank" rel="noopener">Explore SOC-enterprise ↗</a></div>
+    </div>
+    <div class="project-visual">
+      <div class="flow">
+        <div class="node">Managed Endpoint</div><div class="arrow">↓</div>
+        <div class="node">Telemetry & Security Events</div><div class="arrow">↓</div>
+        <div class="node">Detection + IOC Correlation</div><div class="arrow">↓</div>
+        <div class="node">Risk Analysis</div><div class="arrow">↓</div>
+        <div class="node">Alert → Incident → Investigation</div><div class="arrow">↓</div>
+        <div class="node">Response & Audit Trail</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <div class="proof-card reveal"><strong>Endpoint</strong><span>Visibility & telemetry</span></div>
+    <div class="proof-card reveal"><strong>Detection</strong><span>Security signals & correlation</span></div>
+    <div class="proof-card reveal"><strong>Response</strong><span>Investigation & operational workflow</span></div>
+  </div>
+</div>
+</section>
+
+<section id="approach">
+<div class="container">
+  <div class="head reveal">
+    <div class="label">03 / How I Work</div>
+    <h2>From requirement to working security capability.</h2>
+    <p>I start with the operational problem, then design and validate the solution around the actual environment.</p>
+  </div>
+  <div class="process">
+    <div class="step reveal"><b>01</b><span>Requirement</span></div>
+    <div class="step reveal"><b>02</b><span>Assessment</span></div>
+    <div class="step reveal"><b>03</b><span>Architecture</span></div>
+    <div class="step reveal"><b>04</b><span>Build & Integrate</span></div>
+    <div class="step reveal"><b>05</b><span>Test & Validate</span></div>
+  </div>
+  <div class="card reveal" style="margin-top:18px">
+    <h3>Engineering principle</h3>
+    <p style="font-size:17px;margin-top:5px;color:#c9d5e4">Security is not just about knowing the tools. It is about understanding the problem and engineering the right solution.</p>
+    <div class="tags"><span class="tag">Practical</span><span class="tag">Testable</span><span class="tag">Observable</span><span class="tag">Automatable</span><span class="tag">Maintainable</span></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="head reveal">
+    <div class="label">04 / AI + Cybersecurity</div>
+    <h2>AI as part of the security workflow.</h2>
+    <p>Exploring practical AI capabilities that improve analysis, investigation and security operations.</p>
+  </div>
+  <div class="grid2">
+    <article class="card reveal"><h3>AI-Assisted Security Operations</h3><p>Security log analysis, alert triage, threat-intelligence enrichment, investigation assistance and analyst decision support.</p><div class="tags"><span class="tag">LLMs</span><span class="tag">SOC</span><span class="tag">Threat Intel</span></div></article>
+    <article class="card reveal"><h3>Local & Private AI</h3><p>Exploring local AI environments for security workflows where privacy, control and offline processing are important requirements.</p><div class="tags"><span class="tag">Ollama</span><span class="tag">Local Models</span><span class="tag">Automation</span></div></article>
+  </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+  <div class="head reveal">
+    <div class="label">05 / About</div>
+    <h2>Cybersecurity engineering with practical implementation at the center.</h2>
+    <p>I work across cybersecurity consulting, security engineering, research and technical implementation, with a focus on building solutions that can be tested, demonstrated and improved.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card reveal">
+      <h3>Security Engineering Focus</h3>
+      <p>Endpoint security, SOC engineering, detection engineering, network security, security automation, custom security software and AI-assisted security workflows.</p>
+      <div class="tags"><span class="tag">Security Engineering</span><span class="tag">Research</span><span class="tag">Automation</span><span class="tag">AI Security</span></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="cert">
+        <div class="cert-badge">CERT</div>
+        <div>
+          <div class="label" style="margin-bottom:5px">Professional Certifications</div>
+          <h3 style="margin:0">EC-Council</h3>
+          <p style="margin-top:4px"><strong>C|EH</strong> — Certified Ethical Hacker</p>
+          <p><strong>C|EI</strong> — Certified EC-Council Instructor</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="head reveal">
+    <div class="label">06 / Technology</div>
+    <h2>Technology areas.</h2>
+  </div>
+  <div class="techs reveal">
+    <span class="tech">Python</span><span class="tech">Flask</span><span class="tech">React</span><span class="tech">JavaScript</span>
+    <span class="tech">REST APIs</span><span class="tech">SQLite</span><span class="tech">PostgreSQL</span><span class="tech">SOC</span>
+    <span class="tech">SIEM</span><span class="tech">IDS/IPS</span><span class="tech">Network Security</span><span class="tech">Endpoint Security</span>
+    <span class="tech">Detection Engineering</span><span class="tech">Incident Response</span><span class="tech">Digital Forensics</span>
+    <span class="tech">Threat Intelligence</span><span class="tech">LLMs</span><span class="tech">Ollama</span><span class="tech">Local AI</span>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="cta reveal">
+    <div class="label">07 / Collaboration</div>
+    <h2>Have a security requirement?</h2>
+    <p>If your organization, team, institution or project has a cybersecurity problem that needs a custom solution, assessment, monitoring capability, automation workflow, security software or AI integration, let’s discuss the requirement.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn primary" href="https://www.linkedin.com/in/syed-khaja-s-a-2a571213a/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+      <a class="btn secondary" href="https://github.com/sdkhaja92" target="_blank" rel="noopener">View GitHub ↗</a>
+      <a class="btn secondary" href="https://github.com/sdkhaja92/enterprise-pc-monitoring" target="_blank" rel="noopener">Explore SOC-enterprise ↗</a>
+    </div>
+    <p style="font-size:12px;margin-top:17px">Security Assessment • Security Engineering • Custom Security Software • Automation • AI + Cybersecurity</p>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+  <div>© <span id="year"></span> Syed Khaja · Cybersecurity Consultant & Security Engineer</div>
+  <div class="footer-links">
+    <a href="https://github.com/sdkhaja92" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/syed-khaja-s-a-2a571213a/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}})
+},{threshold:.08});
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+
+const progress=document.getElementById("progress");
+function scrollProgress(){
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.width=(max>0?(scrollY/max)*100:0)+"%";
+}
+addEventListener("scroll",scrollProgress,{passive:true});scrollProgress();
+
+const typed=document.getElementById("typed");
+const phrases=["practical security systems","custom SOC capabilities","endpoint security solutions","security automation","AI-assisted workflows"];
+let pi=0,ci=0,del=false;
+function typeLoop(){
+ const p=phrases[pi];
+ typed.textContent=del?p.slice(0,--ci):p.slice(0,++ci);
+ let d=del?30:58;
+ if(!del&&ci===p.length){d=1400;del=true}
+ else if(del&&ci===0){del=false;pi=(pi+1)%phrases.length;d=250}
+ setTimeout(typeLoop,d);
+}
+typeLoop();
+
+const glow=document.getElementById("glow");
+let gx=-300,gy=-300,tx=-300,ty=-300;
+addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;glow.style.opacity="1"},{passive:true});
+(function glowLoop(){gx+=(tx-gx)*.12;gy+=(ty-gy)*.12;glow.style.left=gx+"px";glow.style.top=gy+"px";requestAnimationFrame(glowLoop)})();
+
+const terminal=document.getElementById("terminal");
+if(terminal&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+ terminal.addEventListener("pointermove",e=>{
+   const r=terminal.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+   terminal.style.transform=`perspective(900px) rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-2px)`;
+ });
+ terminal.addEventListener("pointerleave",()=>terminal.style.transform="");
+}
+
+const canvas=document.getElementById("particles"),ctx=canvas.getContext("2d");
+let particles=[],mouse={x:-9999,y:-9999};
+function resize(){
+ const dpr=Math.min(devicePixelRatio||1,2);
+ canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr;canvas.style.width=innerWidth+"px";canvas.style.height=innerHeight+"px";
+ ctx.setTransform(dpr,0,0,dpr,0,0);
+ particles=Array.from({length:Math.min(70,Math.max(28,Math.floor(innerWidth/20)))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,r:Math.random()*1.4+.5}));
+}
+function draw(){
+ ctx.clearRect(0,0,innerWidth,innerHeight);
+ for(const p of particles){
+   p.x+=p.vx;p.y+=p.vy;
+   if(p.x<-10)p.x=innerWidth+10;if(p.x>innerWidth+10)p.x=-10;
+   if(p.y<-10)p.y=innerHeight+10;if(p.y>innerHeight+10)p.y=-10;
+   ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(98,233,255,.4)";ctx.fill();
+ }
+ for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){
+   const a=particles[i],b=particles[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+   if(d<115){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(98,233,255,${(1-d/115)*.08})`;ctx.stroke()}
+ }
+ requestAnimationFrame(draw);
+}
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){resize();addEventListener("resize",resize);draw()}
+</script>
+</body>
+</html>
